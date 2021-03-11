@@ -1,0 +1,89 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<section>
+    <div style="margin:0px auto;width: max-content;">
+      <img src="/assets/bobble-logo.png" style="height: 100px;width: 200px;">
+    </div>
+  </section>
+  <section>
+    <div>
+      <div *ngIf="authorized; then proData else login"></div>
+   <ng-template #login>
+     <div class="signUp">
+      <div>
+        <h5 style="text-align:center;">SIGN UP</h5>
+        <h2 style="text-align:center;">Create your account</h2>
+        <p style="font-size:smaller;text-align:center;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </p>
+      </div>
+      <div style="width:350px;margin:5px auto;">
+        <div style="float:left;">
+          <button class="socialLoginButton" (click)="socialSignIn('google')">
+            <div style="width:150px;">
+              <img src="/assets/google-logo.png" style="width:20px;height:20px;float:left;">
+              <div style="float:right;font-size: smaller;">Signup with google</div>
+            </div>
+          </button>
+        </div>
+        <div style="float:right;">
+          <button class="socialLoginButton" (click)="socialSignIn('facebook')">
+            <div style="width:150px;">
+              <img src="/assets/fb-logo.png" style="width:20px;height:20px;float:left;">
+              <div style="float:right;font-size: smaller;">Signup with facebook</div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div style="margin:50px auto 30px auto;width:350px;">
+        <div class="dividerLeft"></div>
+        <div class="dividerRight"></div>
+        <div style="text-align:center;">or</div>
+      </div>
+      <div style="margin:0px auto;width:max-content;">
+        <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.value)">
+          <div style="margin:10px auto;width:350px;">
+            <input type="text" placeholder="First Name" name="firstname" id="firstname" style="padding:8px;width:350px;" ngModel>
+          </div>
+          <div style="margin:10px auto;width:350px;">
+            <input type="text" placeholder="Last Name" name="lastname" id="lastname" style="padding:8px;width:350px;" ngModel>
+          </div>
+          <div style="margin:10px auto;width:350px;">
+            <input type="text" placeholder="Email Address" name="email" id="email" style="padding:8px;width:350px;" ngModel>
+          </div>
+          <div style="margin:10px auto;width:350px;">
+            <input type="password" placeholder="Password" name="password" id="password" style="padding:8px;width:350px;" ngModel>
+          </div>
+          <div>
+            <p style="font-size:smaller;text-align:center;">
+            By clicking Sign Up, you agree to our <span style="color:#02B3E4;">Terms of Use</span> and our <span style="color:#02B3E4;">Privacy Policy</span>.
+            </p>
+          </div>
+          <div>
+            <button class="signUpButton">
+              SIGN UP
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>  
+  
+  <ng-template #proData>
+    <div style="margin: 20px auto;width: max-content;">
+      <h4 class="marginBottom">My {{user.provider}} profile</h4>
+      <br/>
+      <div class="marginBottom">
+      <h4>{{user.name}}</h4>
+      <p>{{user.email}}</p>
+      </div> 
+      <div style="margin: 10px auto;">
+        <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+      </div>
+    </div>
+  </ng-template>
+  </div>
+  </section>
+  
+  
+  
+       
