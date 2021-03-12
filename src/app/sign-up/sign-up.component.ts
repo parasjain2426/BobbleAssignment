@@ -13,6 +13,9 @@ export class SignUpComponent implements OnInit {
 
   public user!: SocialUser;
   public authorized: boolean = false;
+  public isHide:boolean = true;
+  public hideImgSrc = "/assets/hide.png";
+  public passwordFieldType = "password";
   
   constructor( private authService: SocialAuthService, private api:ApiServiceService ) {}
   
@@ -44,21 +47,36 @@ export class SignUpComponent implements OnInit {
     );
   }
 
-  public signUp(user:any){
-    this.api.postSignUpForm(user.email,user.password).subscribe(
+  //signUp with form using reqres.in
+  public signUpSubmit(signUpForm:any){
+    this.api.postSignUpForm(signUpForm.email,signUpForm.password).subscribe(
       res=>{
         alert("SignUp Successful");
       },
       error=>{
         alert("SignUp Unsuccessful");
       }
-    )
+    );
   }
 
+  //signOut for socialLogin
   public signOut()
   {
     this.authService.signOut();
     this.authorized = false;
+  }
+
+  public showPassword(){
+    if(this.isHide){
+      this.passwordFieldType = "text";
+      this.hideImgSrc = "/assets/visible.png";
+      this.isHide = false;
+    }
+    else{
+      this.passwordFieldType = "password";
+      this.hideImgSrc = "/assets/hide.png";
+      this.isHide = true;
+    }
   }
 
   ngOnInit(): void {

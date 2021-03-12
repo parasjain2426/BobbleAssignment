@@ -13,23 +13,53 @@ body{font-family: arial}
     background-color:white;
     border:1px solid grey;
     border-radius:2px;
+    .socialLoginImg{
+        width:20px;
+        height:20px;
+        float:left;
+    }
+    .socialLoginText{
+        float:right;
+        font-size: smaller;
+    }
     &:hover{
         box-shadow:3px 3px 3px 3px #ccc;
     }   
 }
-.dividerLeft{
+
+.divider{
     height:2px;
     width:150px;
     background-color:grey;
-    float:left;
     margin:15px auto;
+    &.left{
+        float:left;
+    }
+    &.right{
+        float:right;
+    }
 }
-.dividerRight{
-    height:2px;
-    width:150px;
-    background-color:grey;
-    float:right;
-    margin:15px auto;
+.hidePassword{
+    width: 30px; 
+    height: 30px;
+    &:hover{
+        cursor:pointer;
+    }
+}
+input{
+    padding:8px;
+    width:350px;
+}
+.signUpForm{
+    margin:10px auto;
+    width:350px;
+    .form{
+        margin:0px auto;
+        width:max-content;
+    }
+    &.passwordField{
+        border: 0.5px solid #B0B0B0;
+    }
 }
 .signUpButton{
     width:100%;
