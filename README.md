@@ -1,9 +1,9 @@
 # BobbleAssignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
-The project was designed as an assignment which includes a sign-up page with google and facebook signup functionality and form-based signup tested with reqres.in/api/register.
-The project is created using angular, html and scss as instructed.
-The project includes angularx-social-login library.
+It was designed as an assignment which includes a sign-up page with google and facebook signup functionality and form-based signup tested with reqres.in/api/register.
+It is created using angular, html and scss as instructed.
+It includes angularx-social-login library.
 
 ## Development server
 
